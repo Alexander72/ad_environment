@@ -7,14 +7,14 @@ services:
     environment:
       - cluster.name=docker-cluster
       - bootstrap.memory_lock=true
-      - ES_JAVA_OPTS=-Xms1g -Xmx2g
+      - ES_JAVA_OPTS=-Xms512m -Xmx1g
       - discovery.type=single-node
     ports:
       - 9200:9200
     volumes:
-      - ./data/elastic:/usr/share/elasticsearch/data
-      - ./config/elastic/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-    mem_limit: 2g
+      - ./data/elastic/esdata1:/usr/share/elasticsearch/data
+    #  - ./config/elastic/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    mem_limit: 1536m
 
 
   kibana:
@@ -30,7 +30,7 @@ services:
   mysql:
     image: mysql:5.7
     volumes:
-      - ./data/mysql:/var/lib/mysql
+      - ./data/mysql/master:/var/lib/mysql
     ports:
       - 13311:3306
     environment:
