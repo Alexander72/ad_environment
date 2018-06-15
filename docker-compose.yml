@@ -49,4 +49,5 @@ services:
       - db
       - redis
     volumes:
+      - ./config/php/supervisor:/etc/supervisor/conf.d
       - ./code:/code
