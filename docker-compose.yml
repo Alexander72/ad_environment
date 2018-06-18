@@ -50,4 +50,5 @@ services:
       - redis
     volumes:
       - ./config/php/supervisor:/etc/supervisor/conf.d
+      - ./config/php/timezone.ini:/usr/local/etc/php/conf.d/timezone.ini
       - ./code:/code

@@ -11,7 +11,8 @@ RUN apt-get update \
  		supervisor \
  		htop
 
-RUN  docker-php-ext-install pdo_mysql \
+RUN  docker-php-ext-install zip \
+	&& docker-php-ext-install pdo_mysql \
 	&& docker-php-ext-enable pdo_mysql
 
 RUN pecl install redis-4.0.1 \
