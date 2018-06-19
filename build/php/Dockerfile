@@ -23,4 +23,4 @@ COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
 COPY composer.phar /usr/local/bin/composer
 
-CMD supervisord --nodaemon #--logfile=/var/log/supervisor/supervisor.log
+#CMD supervisord --nodaemon
