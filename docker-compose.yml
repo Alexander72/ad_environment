@@ -48,6 +48,9 @@ services:
       - elastic 
       - db
       - redis
+    environment:
+      XDEBUG_CONFIG: "idekey=PHPSTORM remote_host=${HOST_IP} remote_port=9000"
+      PHP_IDE_CONFIG: "serverName=adSpy"
     volumes:
       - ./config/php/supervisor:/etc/supervisor/conf.d
       - ./config/php/timezone.ini:/usr/local/etc/php/conf.d/timezone.ini
